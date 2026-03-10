@@ -154,6 +154,7 @@ pub enum InputContent {
 pub struct OpenAIReasoning {
     id: String,
     pub summary: Vec<ReasoningSummary>,
+    #[serde(skip_serializing_if = "Option::is_none")]
     pub encrypted_content: Option<String>,
     #[serde(skip_serializing_if = "Option::is_none")]
     pub status: Option<ToolStatus>,
